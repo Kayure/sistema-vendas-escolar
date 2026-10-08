@@ -1,0 +1,122 @@
+/* ===== Cores e configurações gerais ===== */
+:root {
+  --cor-principal: #2563eb;
+  --cor-principal-escura: #1d4ed8;
+  --cor-fundo: #f1f5f9;
+  --cor-perigo: #dc2626;
+  --cor-texto: #1e293b;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+}
+
+/* ===== Cabeçalho ===== */
+header {
+  background: var(--cor-principal);
+  color: white;
+  text-align: center;
+  padding: 24px 16px;
+}
+header h1 { margin: 0 0 4px; }
+header p  { margin: 0; opacity: 0.9; }
+
+/* ===== Menu (abas) ===== */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px;
+  flex-wrap: wrap;
+}
+nav button {
+  background: white;
+  color: var(--cor-principal);
+  border: 2px solid var(--cor-principal);
+}
+nav button.ativa {
+  background: var(--cor-principal);
+  color: white;
+}
+
+/* ===== Conteúdo ===== */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 16px 24px;
+}
+
+.cartao {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+.cartao h2 { margin-top: 0; font-size: 1.2rem; }
+
+.escondida { display: none; }
+
+/* ===== Formulários ===== */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+input, select {
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 1rem;
+  flex: 1;
+  min-width: 150px;
+}
+
+/* ===== Botões ===== */
+button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  background: var(--cor-principal);
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+button:hover { background: var(--cor-principal-escura); }
+nav button:hover { background: #dbeafe; }
+nav button.ativa:hover { background: var(--cor-principal-escura); }
+
+/* Botões pequenos dentro das tabelas */
+td button { padding: 6px 10px; font-size: 0.85rem; margin-right: 4px; }
+button.perigo { background: var(--cor-perigo); }
+button.perigo:hover { background: #b91c1c; }
+
+/* ===== Tabelas ===== */
+.tabela-area { overflow-x: auto; } /* permite rolar no celular */
+table { width: 100%; border-collapse: collapse; }
+th, td {
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid #e2e8f0;
+}
+th { background: #f8fafc; }
+tr:hover td { background: #f8fafc; }
+
+#total-geral { text-align: right; font-weight: bold; margin-bottom: 0; }
+
+/* ===== Mensagens de aviso ===== */
+#mensagem { min-height: 24px; margin: 0 0 12px; font-weight: bold; }
+#mensagem.ok   { color: #15803d; }
+#mensagem.erro { color: var(--cor-perigo); }
+
+footer {
+  text-align: center;
+  padding: 16px;
+  color: #64748b;
+  font-size: 0.9rem;
+}

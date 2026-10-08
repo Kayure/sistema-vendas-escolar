@@ -1,0 +1,15 @@
+{
+  "name": "projeto-vendas",
+  "version": "1.0.0",
+  "description": "Banco de dados de vendas para iniciantes (Node.js + mysql2 + Express + front-end)",
+  "main": "servidor.js",
+  "scripts": {
+    "criar-banco": "node criar_banco.js",
+    "start": "node servidor.js",
+    "teste": "node teste.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "mysql2": "^3.11.0"
+  }
+}

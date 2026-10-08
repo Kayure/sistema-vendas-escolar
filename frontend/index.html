@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Loja Escola - Vendas</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+  <!-- Cabeçalho -->
+  <header>
+    <h1>🛒 Loja Escola</h1>
+    <p>Sistema de vendas para aprender banco de dados</p>
+  </header>
+
+  <!-- Menu: cada botão mostra uma "aba" -->
+  <nav>
+    <button data-aba="produtos" class="ativa">Produtos</button>
+    <button data-aba="clientes">Clientes</button>
+    <button data-aba="vendas">Vendas</button>
+  </nav>
+
+  <main>
+    <!-- Aqui aparecem os avisos de sucesso ou erro -->
+    <p id="mensagem"></p>
+
+    <!-- ========== ABA PRODUTOS ========== -->
+    <section id="aba-produtos" class="aba">
+      <div class="cartao">
+        <h2>Cadastrar produto</h2>
+        <form id="form-produto">
+          <input type="text" id="produto-nome" placeholder="Nome do produto" required>
+          <input type="number" id="produto-preco" placeholder="Preço" step="0.01" min="0.01" required>
+          <select id="produto-categoria" required></select>
+          <button type="submit">Cadastrar</button>
+        </form>
+      </div>
+
+      <div class="cartao">
+        <h2>Lista de produtos</h2>
+        <div class="tabela-area">
+          <table>
+            <thead>
+              <tr><th>ID</th><th>Produto</th><th>Categoria</th><th>Preço</th><th>Ações</th></tr>
+            </thead>
+            <tbody id="tabela-produtos"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ABA CLIENTES ========== -->
+    <section id="aba-clientes" class="aba escondida">
+      <div class="cartao">
+        <h2>Cadastrar cliente</h2>
+        <form id="form-cliente">
+          <input type="text" id="cliente-nome" placeholder="Nome" required>
+          <input type="email" id="cliente-email" placeholder="E-mail">
+          <button type="submit">Cadastrar</button>
+        </form>
+      </div>
+
+      <div class="cartao">
+        <h2>Lista de clientes</h2>
+        <div class="tabela-area">
+          <table>
+            <thead><tr><th>ID</th><th>Nome</th><th>E-mail</th><th>Ações</th></tr></thead>
+            <tbody id="tabela-clientes"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="cartao">
+        <h2>Cadastrar endereço</h2>
+        <form id="form-endereco">
+          <select id="endereco-cliente" required></select>
+          <input type="text" id="endereco-rua" placeholder="Rua" required>
+          <input type="text" id="endereco-numero" placeholder="Número">
+          <input type="text" id="endereco-cidade" placeholder="Cidade" required>
+          <button type="submit">Cadastrar</button>
+        </form>
+      </div>
+
+      <div class="cartao">
+        <h2>Endereços</h2>
+        <div class="tabela-area">
+          <table>
+            <thead><tr><th>Cliente</th><th>Rua</th><th>Número</th><th>Cidade</th><th>Ações</th></tr></thead>
+            <tbody id="tabela-enderecos"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ABA VENDAS ========== -->
+    <section id="aba-vendas" class="aba escondida">
+      <div class="cartao">
+        <h2>Registrar venda</h2>
+        <form id="form-venda">
+          <select id="venda-cliente" required></select>
+          <select id="venda-produto" required></select>
+          <input type="number" id="venda-quantidade" placeholder="Quantidade" min="1" value="1" required>
+          <button type="submit">Registrar</button>
+        </form>
+      </div>
+
+      <div class="cartao">
+        <h2>Lista de vendas</h2>
+        <div class="tabela-area">
+          <table>
+            <thead>
+              <tr><th>ID</th><th>Cliente</th><th>Produto</th><th>Qtd.</th><th>Total</th><th>Data</th><th>Ações</th></tr>
+            </thead>
+            <tbody id="tabela-vendas"></tbody>
+          </table>
+        </div>
+        <p id="total-geral"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>Projeto de aprendizado • Node.js + MySQL + HTML/CSS/JS</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
