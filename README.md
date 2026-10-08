@@ -54,13 +54,9 @@ password: 'SuaSenhaAqui',
 
 > 🔒 Não envie sua senha real para o GitHub. Volte para `'SuaSenhaAqui'` antes do `git push`.
 
-**4. Crie o banco de dados** (só uma vez):
 
-```bash
-npm run criar-banco
-```
 
-**5. Ligue o servidor** (deixe o terminal aberto):
+**4. Ligue o servidor** (deixe o terminal aberto):
 
 ```bash
 npm start
